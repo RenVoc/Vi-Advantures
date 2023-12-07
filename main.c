@@ -1,32 +1,35 @@
+/*
+
+    Подключение необходимых библиотек из SDK - основная gb.h, шрифты - font.h
+
+*/
+
 #include <gb/gb.h>
+#include <gb/font.h>
 #include <stdio.h>
-#include "res/SmilerSprites.c"
+#include "res/playerSprites/SmilerSprites.c"
+#include "res/mapSprites/simplebackground.c"
+#include "res/mapSprites/simplebackgroundmap.c"
+#include "res/mapSprites/windowmap.c"
 
 void main(){
-    UINT8 currentspriteindex = 0;
+    font_t min_font; // задаем переменную которая хранит шрифт
+    font_init(); // инициализируем шрифт
+    min_font = font_load(font_min); // подгружаем в переменную один из шрифтов в массиве либы, занимает 36 тайлов
+    font_set(min_font); // устанавливаем шрифт в значение нашей изменной переменной и загружаем в видео память
 
-    //printf("Hello Vi");
-    set_sprite_data(0, 2, Smiler);
-    set_sprite_tile(0, 0);
-    move_sprite(0, 48, 78);
-    SHOW_SPRITES;
+    set_bkg_data(37, 7, backgroundtiles);
+    set_bkg_tiles(0, 0, 40, 18, backgroundmap);
+
+    set_win_tiles(0, 0, 16, 1, windowmap); // устанавливаем координаты, кол-во символов в надписи и строк, которые будут браться из нашего windowmap
+    move_win(7, 120); // перемещаем под слой нашего фона
+
+    SHOW_BKG;  
+    SHOW_WIN;
+    DISPLAY_ON;
 
     while (1) {
-        
-        switch(joypad()) {
-            case J_LEFT: 
-                scroll_sprite(0,-10,0);
-                break;
-            case J_RIGHT:
-                scroll_sprite(0, 10, 0);
-                break;
-            case J_UP:
-                scroll_sprite(0, 0, -10);
-                break;
-            case J_DOWN:
-                scroll_sprite(0, 0, 10);
-                break;
-        }
-        delay(1000);
+        scroll_bkg(1, 0); // прокрутка фона с небольшой задержкой
+        delay(100);
     }
 }

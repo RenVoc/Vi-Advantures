@@ -1,0 +1,16 @@
+{
+  "configurations": [
+    {
+      "inheritEnvironments": [
+        "mingw_64"
+      ],
+      "name": "Mingw64",
+      "includePath": [
+        "${env.INCLUDE}",
+        "${workspaceRoot}\\**",
+        "D:\\devProj\\GBDev\\gbdk\\include\\**"
+      ],
+      "intelliSenseMode": "linux-gcc-x64"
+    }
+  ]
+}
