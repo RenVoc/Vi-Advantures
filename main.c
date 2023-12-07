@@ -27,7 +27,7 @@ void main(){
 
     SHOW_BKG;  
     SHOW_WIN;
-    DISPLAY_ON;
+    DISPLAY_ON; 
 
     while (1) {
         scroll_bkg(1, 0); // прокрутка фона с небольшой задержкой

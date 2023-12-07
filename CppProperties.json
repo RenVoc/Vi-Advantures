@@ -1,16 +1,11 @@
 {
   "configurations": [
     {
-      "inheritEnvironments": [
-        "Win32"
-      ],
-      "name": "Win32",
+      "name": "Mingw64",
       "includePath": [
-        "${env.INCLUDE}",
         "${workspaceRoot}\\**",
-        "D:\\devProj\\GBDev\\gbdk\\include\\**"
-      ],
-      "intelliSenseMode": "msvc-x64"
+        "D:\\devProj\\GBDev\\gbdk\\include\\**"  
+      ]
     }
   ]
 }
