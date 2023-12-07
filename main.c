@@ -13,6 +13,7 @@
 #include "res/mapSprites/windowmap.c"
 
 void main(){
+    system("chcp 1251"); 
     font_t min_font; // задаем переменную которая хранит шрифт
     font_init(); // инициализируем шрифт
     min_font = font_load(font_min); // подгружаем в переменную один из шрифтов в массиве либы, занимает 36 тайлов
