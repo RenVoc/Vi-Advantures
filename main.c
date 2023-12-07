@@ -1,6 +1,6 @@
 #include <gb/gb.h>
 #include <stdio.h>
-#include "res/SmilerSprites.h"
+#include "res/SmilerSprites.c"
 
 void main(){
     UINT8 currentspriteindex = 0;
@@ -13,7 +13,7 @@ void main(){
 
     while (1) {
         
-        swith(joypad()) {
+        switch(joypad()) {
             case J_LEFT: 
                 scroll_sprite(0,-10,0);
                 break;
@@ -27,11 +27,6 @@ void main(){
                 scroll_sprite(0, 0, 10);
                 break;
         }
-        
-        
-
-
         delay(1000);
-        scroll_sprite(0,10,0);
     }
 }
