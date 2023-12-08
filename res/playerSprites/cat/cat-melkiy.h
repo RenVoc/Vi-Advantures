@@ -1,6 +1,6 @@
 /*
 
- SMILERSPRITES.H
+ CAT-MELKIY.H
 
  Include File.
 
@@ -10,7 +10,7 @@
   Compression          : None.
   Counter              : None.
   Tile size            : 8 x 8
-  Tiles                : 0 to 0
+  Tiles                : 0 to 7
 
   Palette colors       : None.
   SGB Palette          : None.
@@ -24,8 +24,8 @@
 
 
 /* Bank of tiles. */
-#define blokeBank 0
+#define melkiyBank 0
 /* Start of tile array. */
-extern unsigned char bloke[];
+extern unsigned char catmelkiy[];
 
-/* End of SMILERSPRITES.H */
+/* End of CAT-MELKIY.H */
