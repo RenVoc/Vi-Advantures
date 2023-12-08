@@ -24,7 +24,7 @@
 
 
 /* Bank of tiles. */
-#define CatBank 0
+#define CatBank 1
 /* Start of tile array. */
 extern unsigned char Cat[];
 

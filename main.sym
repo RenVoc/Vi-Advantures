@@ -9,16 +9,16 @@
 00:0D4E s__BASE
 00:288D s__LIT
 00:288D s__GSINIT
-00:3FDA s__GSINITTAIL
-00:3FDB s__GSFINAL
+01:409A s__GSINITTAIL
+01:409B s__GSFINAL
 00:C000 .OAM
 00:C0A0 s__DATA
-00:C48A s__BSS
-00:C50E s__HEAP
-00:C50E s__BSEG
-00:C50E s__ISEG
-00:C50E s__XSEG
-00:C50E s__OVERLAY
+00:C4AA s__BSS
+00:C52E s__HEAP
+00:C52E s__BSEG
+00:C52E s__ISEG
+00:C52E s__XSEG
+00:C52E s__OVERLAY
 00:E000 .STACK
 00:FF80 .refresh_OAM
 ; Area: _CODE
@@ -154,39 +154,40 @@
 ; Area: _GSINITTAIL
 ; Area: _GSFINAL
 ; Area: _DATA
-00:C0A0 _bloke
-00:C120 _backgroundtiles
-00:C1A0 _backgroundmap
-00:C470 _windowmap
-00:C480 _playerlocation
-00:C484 _jumping
-00:C485 _gravity
-00:C486 _currentspeedY
-00:C488 _floorYposition
+00:C0A0 _Melkiy
+00:C0C0 _Cat
+00:C140 _backgroundtiles
+00:C1C0 _backgroundmap
+00:C490 _windowmap
+00:C4A0 _playerlocation
+00:C4A4 _jumping
+00:C4A5 _gravity
+00:C4A6 _currentspeedY
+00:C4A8 _floorYposition
 ; Area: _BSS
-00:C48A __cpu
-00:C48B .mode
-00:C48C __io_out
-00:C48D __io_in
-00:C48E __io_status
-00:C48F .vbl_done
-00:C490 __current_bank
-00:C491 _sys_time
-00:C491 .sys_time
-00:C493 .int_0x40
-00:C4A3 .int_0x48
-00:C4B3 .int_0x50
-00:C4C3 .int_0x58
-00:C4D3 .int_0x60
-00:C4E3 font_current
-00:C4E6 font_first_free_tile
-00:C4E7 font_table
-00:C4F9 .curx
-00:C4FA .cury
-00:C4FB .fg_colour
-00:C4FC .bg_colour
+00:C4AA __cpu
+00:C4AB .mode
+00:C4AC __io_out
+00:C4AD __io_in
+00:C4AE __io_status
+00:C4AF .vbl_done
+00:C4B0 __current_bank
+00:C4B1 _sys_time
+00:C4B1 .sys_time
+00:C4B3 .int_0x40
+00:C4C3 .int_0x48
+00:C4D3 .int_0x50
+00:C4E3 .int_0x58
+00:C4F3 .int_0x60
+00:C503 font_current
+00:C506 font_first_free_tile
+00:C507 font_table
+00:C519 .curx
+00:C51A .cury
+00:C51B .fg_colour
+00:C51C .bg_colour
 ; Area: _HEAP
-00:C50E _malloc_heap_start
+00:C52E _malloc_heap_start
 ; Area: _OVERLAY
 ; Area: _ISEG
 ; Area: _BSEG

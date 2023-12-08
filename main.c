@@ -7,7 +7,8 @@
 #include <gb/gb.h>
 #include <gb/font.h>
 #include <stdio.h>
-#include "res/playerSprites/bloke.c"
+#include "res/playerSprites/Melkiy.c"
+#include "res/playerSprites/melkiy-big.c"
 #include "res/mapSprites/simplebackground.c"
 #include "res/mapSprites/simplebackgroundmap.c"
 #include "res/mapSprites/windowmap.c"
@@ -75,7 +76,7 @@ void main(){
 	//set_win_tiles(0, 0, 16, 1, windowmap); // устанавливаем координаты, кол-во символов в надписи и строк, которые будут браться из нашего windowmap
 	//move_win(7, 120); // перемещаем под слой нашего фона
 
-	set_sprite_data(0, 8, bloke);
+	set_sprite_data(1, 2, Cat);
 	set_sprite_tile(0, 0);            /* defines the tiles numbers */
 
 	playerlocation[0] = 10;
@@ -85,7 +86,8 @@ void main(){
 	move_sprite(0, playerlocation[0], playerlocation[1]);
 
 	// SHOW_BKG;  
-	SHOW_WIN;
+	// SHOW_WIN;
+	SHOW_SPRITES;
 	DISPLAY_ON; 
 
 	while (1) {

@@ -21,24 +21,24 @@ AREA .  .ABS.
 		l__HOME	01AC
 		l__HEADER	01EB
 		s__CODE	0200
-		l__DATA	03EA
+		l__DATA	040A
 		l__CODE	09A2
 		s__HOME	0BA2
 		s__BASE	0D4E
-		l__GSINIT	174D
+		l__GSINIT	180D
 		l__BASE	1B3F
 		s__LIT	288D
 		s__GSINIT	288D
-		s__GSINITTAIL	3FDA
-		s__GSFINAL	3FDB
+		s__GSINITTAIL	409A
+		s__GSFINAL	409B
 		.OAM	C000
 		s__DATA	C0A0
-		s__BSS	C48A
-		s__HEAP	C50E
-		s__BSEG	C50E
-		s__ISEG	C50E
-		s__XSEG	C50E
-		s__OVERLAY	C50E
+		s__BSS	C4AA
+		s__HEAP	C52E
+		s__BSEG	C52E
+		s__ISEG	C52E
+		s__XSEG	C52E
+		s__OVERLAY	C52E
 		.STACK	E000
 		.refresh_OAM	FF80
 		l__SFR	10000
@@ -197,87 +197,88 @@ AREA _LIT
 AREA _GSINIT
 	RADIX HEX
 	BASE 288D
-	SIZE 174D
+	SIZE 180D
 	ATTRIB REL CON
 	GLOBALS
 		gsinit	288D
 AREA _GSINITTAIL
 	RADIX HEX
-	BASE 3FDA
+	BASE 409A
 	SIZE 0001
 	ATTRIB REL CON
 AREA _GSFINAL
 	RADIX HEX
-	BASE 3FDB
+	BASE 409B
 	SIZE 0000
 	ATTRIB REL CON
 AREA _DATA
 	RADIX HEX
 	BASE C0A0
-	SIZE 03EA
+	SIZE 040A
 	ATTRIB REL CON
 	GLOBALS
-		_bloke	C0A0
-		_backgroundtiles	C120
-		_backgroundmap	C1A0
-		_windowmap	C470
-		_playerlocation	C480
-		_jumping	C484
-		_gravity	C485
-		_currentspeedY	C486
-		_floorYposition	C488
+		_Melkiy	C0A0
+		_Cat	C0C0
+		_backgroundtiles	C140
+		_backgroundmap	C1C0
+		_windowmap	C490
+		_playerlocation	C4A0
+		_jumping	C4A4
+		_gravity	C4A5
+		_currentspeedY	C4A6
+		_floorYposition	C4A8
 AREA _BSS
 	RADIX HEX
-	BASE C48A
+	BASE C4AA
 	SIZE 0084
 	ATTRIB REL CON
 	GLOBALS
-		__cpu	C48A
-		.mode	C48B
-		__io_out	C48C
-		__io_in	C48D
-		__io_status	C48E
-		.vbl_done	C48F
-		__current_bank	C490
-		_sys_time	C491
-		.sys_time	C491
-		.int_0x40	C493
-		.int_0x48	C4A3
-		.int_0x50	C4B3
-		.int_0x58	C4C3
-		.int_0x60	C4D3
-		font_current	C4E3
-		font_first_free_tile	C4E6
-		font_table	C4E7
-		.curx	C4F9
-		.cury	C4FA
-		.fg_colour	C4FB
-		.bg_colour	C4FC
+		__cpu	C4AA
+		.mode	C4AB
+		__io_out	C4AC
+		__io_in	C4AD
+		__io_status	C4AE
+		.vbl_done	C4AF
+		__current_bank	C4B0
+		_sys_time	C4B1
+		.sys_time	C4B1
+		.int_0x40	C4B3
+		.int_0x48	C4C3
+		.int_0x50	C4D3
+		.int_0x58	C4E3
+		.int_0x60	C4F3
+		font_current	C503
+		font_first_free_tile	C506
+		font_table	C507
+		.curx	C519
+		.cury	C51A
+		.fg_colour	C51B
+		.bg_colour	C51C
 AREA _HEAP
 	RADIX HEX
-	BASE C50E
+	BASE C52E
 	SIZE 0000
 	ATTRIB REL CON
 	GLOBALS
-		_malloc_heap_start	C50E
+		_malloc_heap_start	C52E
 AREA _OVERLAY
 	RADIX HEX
-	BASE C50E
+	BASE C52E
 	SIZE 0000
 	ATTRIB REL CON
 AREA _ISEG
 	RADIX HEX
-	BASE C50E
+	BASE C52E
 	SIZE 0000
 	ATTRIB REL CON
 AREA _BSEG
 	RADIX HEX
-	BASE C50E
+	BASE C52E
 	SIZE 0000
 	ATTRIB REL CON
 AREA _XSEG
 	RADIX HEX
-	BASE C50E
+	BASE C52E
 	SIZE 0000
 	ATTRIB REL CON
 AREA _SFR
@@ -345,7 +346,7 @@ MODULES
 	FILE D:\devProj\GBDev\gbdk\lib/small/asxxxx/gb/crt0.o
 		NAME Runtime
 	FILE main.o
-		NAME lcc284400
+		NAME lcc307800
 LIBRARIES
 	LIBRARY D:\devProj\GBDev\gbdk\lib/small/asxxxx/gb/gb.lib
 		MODULE sfr.o
