@@ -1,0 +1,11 @@
+{
+  "configurations": [
+    {
+      "name": "Mingw64",
+      "includePath": [
+        "${workspaceRoot}\\**",
+        "D:\\devProj\\GBDev\\gbdk\\include\\**"  
+      ]
+    }
+  ]
+}
