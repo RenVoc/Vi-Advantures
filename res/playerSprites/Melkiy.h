@@ -24,8 +24,7 @@
 
 
 /* Bank of tiles. */
-#define MelkiyBank 0
+#define MelkiyBank 1
 /* Start of tile array. */
 extern unsigned char Melkiy[];
 
-/* End of MELKIY.H */

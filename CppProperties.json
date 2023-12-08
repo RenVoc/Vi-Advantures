@@ -1,11 +1,20 @@
 {
   "configurations": [
     {
-      "name": "Mingw64",
+      "name": "Win32",
       "includePath": [
-        "${workspaceRoot}\\**",
-        "D:\\devProj\\GBDev\\gbdk\\include\\**"  
-      ]
+        "D:\\devProj\\GBDev\\gbdk\\include\\**"
+      ],
+      "defines": [
+        "_DEBUG",
+        "UNICODE",
+        "_UNICODE"
+      ],
+      "compilerPath": "C:\\msys64\\mingw64\\bin\\gcc.exe",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "clang-x64"
     }
-  ]
+  ],
+  "version": 4
 }

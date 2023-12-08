@@ -24,8 +24,8 @@
 
 
 /* Bank of tiles. */
-#define SmilerBank 1
+#define blokeBank 0
 /* Start of tile array. */
-extern unsigned char Smiler[];
+extern unsigned char bloke[];
 
 /* End of SMILERSPRITES.H */

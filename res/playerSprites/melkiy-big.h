@@ -1,15 +1,15 @@
 /*
 
- SMILERSPRITES.C
+ MELKIY.H
 
- Tile Source File.
+ Include File.
 
  Info:
   Form                 : All tiles as one unit.
   Format               : Gameboy 4 color.
   Compression          : None.
   Counter              : None.
-  Tile size            : 8 x 8
+  Tile size            : 16 x 16
   Tiles                : 0 to 1
 
   Palette colors       : None.
@@ -22,13 +22,10 @@
 
 */
 
-/* Start of tile array. */
-unsigned char Smiler[] =
-{
-  0x7E,0x7E,0xFF,0x81,0xFF,0xA5,0xFF,0x81,
-  0xFF,0x81,0xFF,0xBD,0xFF,0x81,0x7E,0x7E,
-  0x7E,0x7E,0xFF,0x81,0xFF,0xA5,0xFF,0x81,
-  0xFF,0xA5,0xFF,0x99,0xFF,0x81,0x7E,0x7E
-};
 
-/* End of SMILERSPRITES.C */
+/* Bank of tiles. */
+#define CatBank 0
+/* Start of tile array. */
+extern unsigned char Cat[];
+
+/* End of MELKIY.H */
