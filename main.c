@@ -20,7 +20,7 @@ INT16 currentspeedY;
 INT16 floorYposition = 139;
 
 struct GameCharacter cat;
-struct GameCharacter bug;
+struct GameCharacter enemy;
 UBYTE spritesize = 8;
 
 void movegamecharacter(struct GameCharacter* character, UINT8 x, UINT8 y) {
@@ -49,19 +49,21 @@ void setupcat() {
 }
 
 void setupenemy() {
-	cat.x = 80;
-	cat.y = 130;
-	cat.width = 16;
-	cat.height = 16;
+	enemy.x = 80;
+	enemy.y = 130;
+	enemy.width = 16;
+	enemy.height = 16;
 
 	set_sprite_tile(8, 8);
-	cat.spritids[8] = 8;
+	enemy.spritids[8] = 8;
 	set_sprite_tile(9, 9);
-	cat.spritids[9] = 9;
+	enemy.spritids[9] = 9;
 	set_sprite_tile(10, 10);
-	cat.spritids[10] = 10;
+	enemy.spritids[10] = 10;
 	set_sprite_tile(11, 11);
-	cat.spritids[11] = 11;
+	enemy.spritids[11] = 11;
+
+	movegamecharacter(&enemy, enemy.x, enemy.y);
 }
 
 /*
@@ -134,7 +136,7 @@ void main() {
 	//move_sprite(0, playerlocation[0], playerlocation[1]);
 
 	setupcat();
-
+	setupenemy();
 	// SHOW_BKG;  
 	// SHOW_WIN;
 	SHOW_SPRITES;
