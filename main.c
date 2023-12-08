@@ -7,13 +7,12 @@
 #include <gb/gb.h>
 #include <gb/font.h>
 #include <stdio.h>
-#include "res/playerSprites/SmilerSprites.c"
+#include "res/playerSprites/Melkiy.c"
 #include "res/mapSprites/simplebackground.c"
 #include "res/mapSprites/simplebackgroundmap.c"
 #include "res/mapSprites/windowmap.c"
 
 void main(){
-    system("chcp 1251"); 
     font_t min_font; // задаем переменную которая хранит шрифт
     font_init(); // инициализируем шрифт
     min_font = font_load(font_min); // подгружаем в переменную один из шрифтов в массиве либы, занимает 36 тайлов

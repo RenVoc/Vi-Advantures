@@ -151,7 +151,7 @@
 ; Area: _GSINITTAIL
 ; Area: _GSFINAL
 ; Area: _DATA
-00:C0A0 _Smiler
+00:C0A0 _Melkiy
 00:C0C0 _backgroundtiles
 00:C140 _backgroundmap
 00:C410 _windowmap

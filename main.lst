@@ -1,9 +1,9 @@
                               1 ;--------------------------------------------------------
                               2 ; File Created by SDCC : FreeWare ANSI-C Compiler
-                              3 ; Version 2.2.1 Fri Dec 08 02:31:59 2023
+                              3 ; Version 2.2.1 Fri Dec 08 19:05:50 2023
                               4 
                               5 ;--------------------------------------------------------
-                              6 	.module lcc274600
+                              6 	.module lcc294600
                               7 	
                               8 ;--------------------------------------------------------
                               9 ; Public variables in this module
@@ -100,7 +100,7 @@
                             100 ; internal ram data
                             101 ;--------------------------------------------------------
                             102 	.area _DATA
-   0000                     103 _Smiler::
+   0000                     103 _Melkiy::
    0000                     104 	.ds 32
    0020                     105 _backgroundtiles::
    0020                     106 	.ds 128
@@ -132,194 +132,194 @@
                             132 	.area _GSINIT
                             133 ;	main.c 36
                             134 ; genAssign (pointer)
-   0000 11 00 00            135 	ld	de,#_Smiler + 0
-   0003 3E 7E               136 	ld	a,#0x7E
+   0000 11 00 00            135 	ld	de,#_Melkiy + 0
+   0003 3E 48               136 	ld	a,#0x48
    0005 12                  137 	ld	(de),a
                             138 ; genPlus
                             139 ; genPlusIncr
-   0006 11 01 00            140 	ld	de,#_Smiler + 0 + 1
+   0006 11 01 00            140 	ld	de,#_Melkiy + 0 + 1
                             141 ; genAssign (pointer)
-   0009 3E 7E               142 	ld	a,#0x7E
+   0009 3E 48               142 	ld	a,#0x48
    000B 12                  143 	ld	(de),a
                             144 ; genPlus
                             145 ; genPlusIncr
-   000C 11 02 00            146 	ld	de,#_Smiler + 0 + 2
+   000C 11 02 00            146 	ld	de,#_Melkiy + 0 + 2
                             147 ; genAssign (pointer)
-   000F 3E FF               148 	ld	a,#0xFF
+   000F 3E FC               148 	ld	a,#0xFC
    0011 12                  149 	ld	(de),a
                             150 ; genPlus
                             151 ; genPlusIncr
-   0012 11 03 00            152 	ld	de,#_Smiler + 0 + 3
+   0012 11 03 00            152 	ld	de,#_Melkiy + 0 + 3
                             153 ; genAssign (pointer)
-   0015 3E 81               154 	ld	a,#0x81
+   0015 3E FC               154 	ld	a,#0xFC
    0017 12                  155 	ld	(de),a
                             156 ; genPlus
                             157 ; genPlusIncr
-   0018 11 04 00            158 	ld	de,#_Smiler + 0 + 4
+   0018 11 04 00            158 	ld	de,#_Melkiy + 0 + 4
                             159 ; genAssign (pointer)
-   001B 3E FF               160 	ld	a,#0xFF
+   001B 3E FC               160 	ld	a,#0xFC
    001D 12                  161 	ld	(de),a
                             162 ; genPlus
                             163 ; genPlusIncr
-   001E 11 05 00            164 	ld	de,#_Smiler + 0 + 5
+   001E 11 05 00            164 	ld	de,#_Melkiy + 0 + 5
                             165 ; genAssign (pointer)
-   0021 3E A5               166 	ld	a,#0xA5
+   0021 3E FC               166 	ld	a,#0xFC
    0023 12                  167 	ld	(de),a
                             168 ; genPlus
                             169 ; genPlusIncr
-   0024 11 06 00            170 	ld	de,#_Smiler + 0 + 6
+   0024 11 06 00            170 	ld	de,#_Melkiy + 0 + 6
                             171 ; genAssign (pointer)
-   0027 3E FF               172 	ld	a,#0xFF
+   0027 3E AD               172 	ld	a,#0xAD
    0029 12                  173 	ld	(de),a
                             174 ; genPlus
                             175 ; genPlusIncr
-   002A 11 07 00            176 	ld	de,#_Smiler + 0 + 7
+   002A 11 07 00            176 	ld	de,#_Melkiy + 0 + 7
                             177 ; genAssign (pointer)
-   002D 3E 81               178 	ld	a,#0x81
+   002D 3E FD               178 	ld	a,#0xFD
    002F 12                  179 	ld	(de),a
                             180 ; genPlus
                             181 ; genPlusIncr
-   0030 11 08 00            182 	ld	de,#_Smiler + 0 + 8
+   0030 11 08 00            182 	ld	de,#_Melkiy + 0 + 8
                             183 ; genAssign (pointer)
-   0033 3E FF               184 	ld	a,#0xFF
+   0033 3E FD               184 	ld	a,#0xFD
    0035 12                  185 	ld	(de),a
                             186 ; genPlus
                             187 ; genPlusIncr
-   0036 11 09 00            188 	ld	de,#_Smiler + 0 + 9
+   0036 11 09 00            188 	ld	de,#_Melkiy + 0 + 9
                             189 ; genAssign (pointer)
-   0039 3E 81               190 	ld	a,#0x81
+   0039 3E FD               190 	ld	a,#0xFD
    003B 12                  191 	ld	(de),a
                             192 ; genPlus
                             193 ; genPlusIncr
-   003C 11 0A 00            194 	ld	de,#_Smiler + 0 + 10
+   003C 11 0A 00            194 	ld	de,#_Melkiy + 0 + 10
                             195 ; genAssign (pointer)
-   003F 3E FF               196 	ld	a,#0xFF
+   003F 3E 7F               196 	ld	a,#0x7F
    0041 12                  197 	ld	(de),a
                             198 ; genPlus
                             199 ; genPlusIncr
-   0042 11 0B 00            200 	ld	de,#_Smiler + 0 + 11
+   0042 11 0B 00            200 	ld	de,#_Melkiy + 0 + 11
                             201 ; genAssign (pointer)
-   0045 3E BD               202 	ld	a,#0xBD
+   0045 3E 7F               202 	ld	a,#0x7F
    0047 12                  203 	ld	(de),a
                             204 ; genPlus
                             205 ; genPlusIncr
-   0048 11 0C 00            206 	ld	de,#_Smiler + 0 + 12
+   0048 11 0C 00            206 	ld	de,#_Melkiy + 0 + 12
                             207 ; genAssign (pointer)
-   004B 3E FF               208 	ld	a,#0xFF
+   004B 3E 3F               208 	ld	a,#0x3F
    004D 12                  209 	ld	(de),a
                             210 ; genPlus
                             211 ; genPlusIncr
-   004E 11 0D 00            212 	ld	de,#_Smiler + 0 + 13
+   004E 11 0D 00            212 	ld	de,#_Melkiy + 0 + 13
                             213 ; genAssign (pointer)
-   0051 3E 81               214 	ld	a,#0x81
+   0051 3E 3F               214 	ld	a,#0x3F
    0053 12                  215 	ld	(de),a
                             216 ; genPlus
                             217 ; genPlusIncr
-   0054 11 0E 00            218 	ld	de,#_Smiler + 0 + 14
+   0054 11 0E 00            218 	ld	de,#_Melkiy + 0 + 14
                             219 ; genAssign (pointer)
-   0057 3E 7E               220 	ld	a,#0x7E
+   0057 3E 35               220 	ld	a,#0x35
    0059 12                  221 	ld	(de),a
                             222 ; genPlus
                             223 ; genPlusIncr
-   005A 11 0F 00            224 	ld	de,#_Smiler + 0 + 15
+   005A 11 0F 00            224 	ld	de,#_Melkiy + 0 + 15
                             225 ; genAssign (pointer)
-   005D 3E 7E               226 	ld	a,#0x7E
+   005D 3E 3F               226 	ld	a,#0x3F
    005F 12                  227 	ld	(de),a
                             228 ; genPlus
                             229 ; genPlusIncr
-   0060 11 10 00            230 	ld	de,#_Smiler + 0 + 16
+   0060 11 10 00            230 	ld	de,#_Melkiy + 0 + 16
                             231 ; genAssign (pointer)
-   0063 3E 7E               232 	ld	a,#0x7E
+   0063 3E 48               232 	ld	a,#0x48
    0065 12                  233 	ld	(de),a
                             234 ; genPlus
                             235 ; genPlusIncr
-   0066 11 11 00            236 	ld	de,#_Smiler + 0 + 17
+   0066 11 11 00            236 	ld	de,#_Melkiy + 0 + 17
                             237 ; genAssign (pointer)
-   0069 3E 7E               238 	ld	a,#0x7E
+   0069 3E 48               238 	ld	a,#0x48
    006B 12                  239 	ld	(de),a
                             240 ; genPlus
                             241 ; genPlusIncr
-   006C 11 12 00            242 	ld	de,#_Smiler + 0 + 18
+   006C 11 12 00            242 	ld	de,#_Melkiy + 0 + 18
                             243 ; genAssign (pointer)
-   006F 3E FF               244 	ld	a,#0xFF
+   006F 3E FC               244 	ld	a,#0xFC
    0071 12                  245 	ld	(de),a
                             246 ; genPlus
                             247 ; genPlusIncr
-   0072 11 13 00            248 	ld	de,#_Smiler + 0 + 19
+   0072 11 13 00            248 	ld	de,#_Melkiy + 0 + 19
                             249 ; genAssign (pointer)
-   0075 3E 81               250 	ld	a,#0x81
+   0075 3E FC               250 	ld	a,#0xFC
    0077 12                  251 	ld	(de),a
                             252 ; genPlus
                             253 ; genPlusIncr
-   0078 11 14 00            254 	ld	de,#_Smiler + 0 + 20
+   0078 11 14 00            254 	ld	de,#_Melkiy + 0 + 20
                             255 ; genAssign (pointer)
-   007B 3E FF               256 	ld	a,#0xFF
+   007B 3E FC               256 	ld	a,#0xFC
    007D 12                  257 	ld	(de),a
                             258 ; genPlus
                             259 ; genPlusIncr
-   007E 11 15 00            260 	ld	de,#_Smiler + 0 + 21
+   007E 11 15 00            260 	ld	de,#_Melkiy + 0 + 21
                             261 ; genAssign (pointer)
-   0081 3E A5               262 	ld	a,#0xA5
+   0081 3E FC               262 	ld	a,#0xFC
    0083 12                  263 	ld	(de),a
                             264 ; genPlus
                             265 ; genPlusIncr
-   0084 11 16 00            266 	ld	de,#_Smiler + 0 + 22
+   0084 11 16 00            266 	ld	de,#_Melkiy + 0 + 22
                             267 ; genAssign (pointer)
-   0087 3E FF               268 	ld	a,#0xFF
+   0087 3E D5               268 	ld	a,#0xD5
    0089 12                  269 	ld	(de),a
                             270 ; genPlus
                             271 ; genPlusIncr
-   008A 11 17 00            272 	ld	de,#_Smiler + 0 + 23
+   008A 11 17 00            272 	ld	de,#_Melkiy + 0 + 23
                             273 ; genAssign (pointer)
-   008D 3E 81               274 	ld	a,#0x81
+   008D 3E FD               274 	ld	a,#0xFD
    008F 12                  275 	ld	(de),a
                             276 ; genPlus
                             277 ; genPlusIncr
-   0090 11 18 00            278 	ld	de,#_Smiler + 0 + 24
+   0090 11 18 00            278 	ld	de,#_Melkiy + 0 + 24
                             279 ; genAssign (pointer)
-   0093 3E FF               280 	ld	a,#0xFF
+   0093 3E FD               280 	ld	a,#0xFD
    0095 12                  281 	ld	(de),a
                             282 ; genPlus
                             283 ; genPlusIncr
-   0096 11 19 00            284 	ld	de,#_Smiler + 0 + 25
+   0096 11 19 00            284 	ld	de,#_Melkiy + 0 + 25
                             285 ; genAssign (pointer)
-   0099 3E A5               286 	ld	a,#0xA5
+   0099 3E FD               286 	ld	a,#0xFD
    009B 12                  287 	ld	(de),a
                             288 ; genPlus
                             289 ; genPlusIncr
-   009C 11 1A 00            290 	ld	de,#_Smiler + 0 + 26
+   009C 11 1A 00            290 	ld	de,#_Melkiy + 0 + 26
                             291 ; genAssign (pointer)
-   009F 3E FF               292 	ld	a,#0xFF
+   009F 3E 7F               292 	ld	a,#0x7F
    00A1 12                  293 	ld	(de),a
                             294 ; genPlus
                             295 ; genPlusIncr
-   00A2 11 1B 00            296 	ld	de,#_Smiler + 0 + 27
+   00A2 11 1B 00            296 	ld	de,#_Melkiy + 0 + 27
                             297 ; genAssign (pointer)
-   00A5 3E 99               298 	ld	a,#0x99
+   00A5 3E 7F               298 	ld	a,#0x7F
    00A7 12                  299 	ld	(de),a
                             300 ; genPlus
                             301 ; genPlusIncr
-   00A8 11 1C 00            302 	ld	de,#_Smiler + 0 + 28
+   00A8 11 1C 00            302 	ld	de,#_Melkiy + 0 + 28
                             303 ; genAssign (pointer)
-   00AB 3E FF               304 	ld	a,#0xFF
+   00AB 3E 3F               304 	ld	a,#0x3F
    00AD 12                  305 	ld	(de),a
                             306 ; genPlus
                             307 ; genPlusIncr
-   00AE 11 1D 00            308 	ld	de,#_Smiler + 0 + 29
+   00AE 11 1D 00            308 	ld	de,#_Melkiy + 0 + 29
                             309 ; genAssign (pointer)
-   00B1 3E 81               310 	ld	a,#0x81
+   00B1 3E 3F               310 	ld	a,#0x3F
    00B3 12                  311 	ld	(de),a
                             312 ; genPlus
                             313 ; genPlusIncr
-   00B4 11 1E 00            314 	ld	de,#_Smiler + 0 + 30
+   00B4 11 1E 00            314 	ld	de,#_Melkiy + 0 + 30
                             315 ; genAssign (pointer)
-   00B7 3E 7E               316 	ld	a,#0x7E
+   00B7 3E 2B               316 	ld	a,#0x2B
    00B9 12                  317 	ld	(de),a
                             318 ; genPlus
                             319 ; genPlusIncr
-   00BA 11 1F 00            320 	ld	de,#_Smiler + 0 + 31
+   00BA 11 1F 00            320 	ld	de,#_Melkiy + 0 + 31
                             321 ; genAssign (pointer)
-   00BD 3E 7E               322 	ld	a,#0x7E
+   00BD 3E 3F               322 	ld	a,#0x3F
    00BF 12                  323 	ld	(de),a
                             324 ;	main.c 36
                             325 ; genAssign (pointer)
@@ -5688,6 +5688,7 @@ Symbol Table
     _LCDC_REG                          **** GX
     _LYC_REG                           **** GX
     _LY_REG                            **** GX
+  1 _Melkiy                            0000 GR
     _NR10_REG                          **** GX
     _NR11_REG                          **** GX
     _NR12_REG                          **** GX
@@ -5721,7 +5722,6 @@ Symbol Table
     _SC_REG                            **** GX
     _STAT_REG                          **** GX
     _SVBK_REG                          **** GX
-  1 _Smiler                            0000 GR
     _TAC_REG                           **** GX
     _TIMA_REG                          **** GX
     _TMA_REG                           **** GX

@@ -214,7 +214,7 @@ AREA _DATA
 	SIZE 0380
 	ATTRIB REL CON
 	GLOBALS
-		_Smiler	C0A0
+		_Melkiy	C0A0
 		_backgroundtiles	C0C0
 		_backgroundmap	C140
 		_windowmap	C410
@@ -337,7 +337,7 @@ MODULES
 	FILE D:\devProj\GBDev\gbdk\lib/small/asxxxx/gb/crt0.o
 		NAME Runtime
 	FILE main.o
-		NAME lcc274600
+		NAME lcc294600
 LIBRARIES
 	LIBRARY D:\devProj\GBDev\gbdk\lib/small/asxxxx/gb/gb.lib
 		MODULE sfr.o
