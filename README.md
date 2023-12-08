@@ -1,4 +1,4 @@
-# Vi Advantures
+# Vi Adventures
 <strong>Приключения Ви</strong> - это игра для ретро-консоли <strong>Game Boy / Game Boy Color</strong> разрабатываемая под движком оригинального Game Boy с использованием SDK - [GameBoy Development Kit](https://sourceforge.net/projects/gbdk/files/gbdk-win32/2.95-3/) на языке <strong>C</strong> и <strong>Ассемблере</strong>.
 
 ## Процесс разработки
