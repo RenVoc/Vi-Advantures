@@ -7,8 +7,8 @@
 #include <gb/gb.h>
 #include <gb/font.h>
 #include <stdio.h>
-#include "res/mapSprites/simplebackground.c"
-#include "res/mapSprites/simplebackgroundmap.c"
+#include "res/mapSprites/new_bg_gameboy_data.c"
+#include "res/mapSprites/new_bg_gameboy_map.c"
 #include "res/mapSprites/windowmap.c"
 #include "GameCharacter.c"
 #include "res/characters.c"
@@ -16,6 +16,7 @@
 INT16 playerlocation[2]; // stores two INT16 x and y position of player
 BYTE jumping;
 INT8 gravity = -2;
+INT8 i;
 INT16 currentspeedY;
 INT16 floorYposition = 139;
 
@@ -31,7 +32,7 @@ void movegamecharacter(GameCharacter* character, UINT8 x, UINT8 y) {
 }
 
 void setupcat() {
-	cat.x = 80;
+	cat.x = 10;
 	cat.y = 130;
 	cat.width = 16;
 	cat.height = 16;
@@ -49,7 +50,7 @@ void setupcat() {
 }
 
 void setupenemy() {
-	enemy.x = 20;
+	enemy.x = 160;
 	enemy.y = 130;
 	enemy.width = 16;
 	enemy.height = 16;
@@ -98,6 +99,41 @@ void jump(UINT8 spriteid, UINT16 spritelocation[2]) {
 		movegamecharacter(&cat, cat.x, cat.y);
 	}
 }*/
+void fadeout() {
+	for (i = 0; i < 4; i++) {
+		switch (i)	{
+			case 0:
+				BGP_REG = 0xE4;
+				break;
+			case 1:
+				BGP_REG = 0xF9;
+				break;
+			case 2:
+				BGP_REG = 0xFE;
+				break;
+			case 3:
+				BGP_REG = 0xFF;
+				break;
+		}
+		performantdelay(10);
+	}
+}
+void fadein() {
+	for (i = 0; i < 3; i++) {
+		switch (i)	{
+			case 0:
+				BGP_REG = 0xFE;
+				break;
+			case 1:
+				BGP_REG = 0xF9;
+				break;
+			case 2:
+				BGP_REG = 0xE4;
+				break;
+		}
+		performantdelay(10);
+	}
+}
 
 void performantdelay(UINT8 numloops) {
 	UINT8 i;
@@ -112,9 +148,17 @@ UBYTE checkcollisions(GameCharacter* one, GameCharacter* two) {
 
 
 void main() {
+	set_bkg_data(0, 197, new_bg_gameboy_data);
+	set_bkg_tiles(0, 0, 20, 18, new_bg_gameboy_map);
+	set_win_tiles(0, 0, 16, 1, windowmap); // устанавливаем координаты, кол-во символов в надписи и строк, которые будут браться из нашего windowmap
+	move_win(7, 100); // перемещаем под слой нашего фона  
 
-	set_sprite_data(0, 8, characters);
+	SHOW_BKG;
+	DISPLAY_ON;
 
+	waitpad(J_START);
+
+	HIDE_BKG;
 	//NR52_REG = 0x80;
 	//NR50_REG = 0x77;
 	//NR51_REG = 0xFF;
@@ -135,38 +179,37 @@ void main() {
 	//jumping = 0;
 
 	//move_sprite(0, playerlocation[0], playerlocation[1]);
-
+	set_sprite_data(0, 8, characters);
 	setupcat();
-	setupenemy(); 
+	setupenemy();
 	// SHOW_BKG;  
 	// SHOW_WIN;
 	SHOW_SPRITES;
-	DISPLAY_ON; 
 
 	while (!checkcollisions(&cat, &enemy)) {
 		if (joypad() & J_LEFT) {
-			cat.x -= 2;
+			cat.x -= 5;
 			movegamecharacter(&cat, cat.x, cat.y);
 		}
 		if (joypad() & J_RIGHT) {
-			cat.x += 2;
+			cat.x += 5;
 			movegamecharacter(&cat, cat.x, cat.y);
 		}
 		if (joypad() & J_UP) {
-			cat.y -= 2;
+			cat.y -= 5;
 			movegamecharacter(&cat, cat.x, cat.y);
 		}
 		if (joypad() & J_DOWN) {
-			cat.y += 2;
+			cat.y += 5;
 			movegamecharacter(&cat, cat.x, cat.y);
 		}
 
-		enemy.x -= 5;
+		enemy.x -= 10;
 		if (enemy.x <= 0) {
 			enemy.x = 160;
-			enemy.y = cat.y; 
+			enemy.y = cat.y;
 		}
-		movegamecharacter(&enemy, enemy.x, enemy.y); 
+		movegamecharacter(&enemy, enemy.x, enemy.y);
 
 		performantdelay(5);
 	}
