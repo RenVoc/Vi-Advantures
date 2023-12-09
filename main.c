@@ -114,10 +114,10 @@ void main() {
 	//NR50_REG = 0x77;
 	//NR51_REG = 0xFF;
 	
-	font_t min_font; // задаем переменную которая хранит шрифт
-	font_init(); // инициализируем шрифт
-	min_font = font_load(font_min); // подгружаем в переменную один из шрифтов в массиве либы, занимает 36 тайлов
-	font_set(min_font); // устанавливаем шрифт в значение нашей изменной переменной и загружаем в видео память 
+	//font_t min_font; // задаем переменную которая хранит шрифт
+	//font_init(); // инициализируем шрифт
+	//min_font = font_load(font_min); // подгружаем в переменную один из шрифтов в массиве либы, занимает 36 тайлов
+	//font_set(min_font); // устанавливаем шрифт в значение нашей изменной переменной и загружаем в видео память 
 
 	//set_bkg_data(37, 7, backgroundtiles);
 	//set_bkg_tiles(0, 0, 40, 18, backgroundmap);
@@ -152,8 +152,20 @@ void main() {
 			cat.x += 2;
 			movegamecharacter(&cat, cat.x, cat.y);
 		}
+		if (joypad() & J_UP) {
+			cat.y -= 2;
+			movegamecharacter(&cat, cat.x, cat.y);
+		}
+		if (joypad() & J_DOWN) {
+			cat.y += 2;
+			movegamecharacter(&cat, cat.x, cat.y);
+		}
 
 		enemy.x -= 5;
+		if (enemy.x <= 0) {
+			enemy.x = 160;
+			enemy.y = cat.y;
+		}
 		movegamecharacter(&enemy, enemy.x, enemy.y); 
 
 		performantdelay(5);
