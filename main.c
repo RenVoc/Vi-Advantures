@@ -7,11 +7,11 @@
 #include <gb/gb.h>
 #include <gb/font.h>
 #include <stdio.h>
-#include "res/characters.c"
 #include "res/mapSprites/simplebackground.c"
 #include "res/mapSprites/simplebackgroundmap.c"
 #include "res/mapSprites/windowmap.c"
 #include "GameCharacter.c"
+#include "res/characters.c"
 
 INT16 playerlocation[2]; // stores two INT16 x and y position of player
 BYTE jumping;
@@ -19,11 +19,11 @@ INT8 gravity = -2;
 INT16 currentspeedY;
 INT16 floorYposition = 139;
 
-struct GameCharacter cat;
-struct GameCharacter enemy;
+GameCharacter cat;
+GameCharacter enemy;
 UBYTE spritesize = 8;
 
-void movegamecharacter(struct GameCharacter* character, UINT8 x, UINT8 y) {
+void movegamecharacter(GameCharacter* character, UINT8 x, UINT8 y) {
 	move_sprite(character->spritids[0], x, y);
 	move_sprite(character->spritids[1], x, y + spritesize);
 	move_sprite(character->spritids[2], x + spritesize, y);
@@ -106,6 +106,11 @@ void performantdelay(UINT8 numloops) {
 	}
 }
 
+UBYTE checkcollisions(GameCharacter* one, GameCharacter* two) {
+	return (one->x >= two->x && one->x <= two->x + two->width) && (one->y >= two->y && one->y <= two->y + two->height) || (two->x >= one->x && two->x <= one->x + one->width) && (two->y >= one->y && two->y <= one->y + one->height);
+}
+
+
 void main() {
 
 	set_sprite_data(0, 8, characters);
@@ -114,10 +119,10 @@ void main() {
 	//NR50_REG = 0x77;
 	//NR51_REG = 0xFF;
 	
-	font_t min_font; // задаем переменную которая хранит шрифт
-	font_init(); // инициализируем шрифт
-	min_font = font_load(font_min); // подгружаем в переменную один из шрифтов в массиве либы, занимает 36 тайлов
-	font_set(min_font); // устанавливаем шрифт в значение нашей изменной переменной и загружаем в видео память 
+	//font_t min_font; // задаем переменную которая хранит шрифт
+	//font_init(); // инициализируем шрифт
+	//min_font = font_load(font_min); // подгружаем в переменную один из шрифтов в массиве либы, занимает 36 тайлов
+	//font_set(min_font); // устанавливаем шрифт в значение нашей изменной переменной и загружаем в видео память 
 
 	//set_bkg_data(37, 7, backgroundtiles);
 	//set_bkg_tiles(0, 0, 40, 18, backgroundmap);
@@ -138,24 +143,33 @@ void main() {
 	SHOW_SPRITES;
 	DISPLAY_ON; 
 
-	while (1) {
-		// scroll_bkg(1, 0); // прокрутка фона с небольшой задержкой
-		if ((joypad() & J_A) || jumping == 1) {
-
-		}
+	while (!checkcollisions(&cat, &enemy)) {
 		if (joypad() & J_LEFT) {
 			cat.x -= 2;
 			movegamecharacter(&cat, cat.x, cat.y);
-
 		}
 		if (joypad() & J_RIGHT) {
 			cat.x += 2;
 			movegamecharacter(&cat, cat.x, cat.y);
 		}
+		if (joypad() & J_UP) {
+			cat.y -= 2;
+			movegamecharacter(&cat, cat.x, cat.y);
+		}
+		if (joypad() & J_DOWN) {
+			cat.y += 2;
+			movegamecharacter(&cat, cat.x, cat.y);
+		}
 
 		enemy.x -= 5;
+		if (enemy.x <= 0) {
+			enemy.x = 160;
+			enemy.y = cat.y; 
+		}
 		movegamecharacter(&enemy, enemy.x, enemy.y); 
 
 		performantdelay(5);
 	}
+
+	printf("\n \n \n \n == Happy New Year \n \n \n My Sweety Vi :3 ==");
 }
