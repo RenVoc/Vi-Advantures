@@ -25,8 +25,8 @@ UBYTE spritesize = 8;
 
 void movegamecharacter(struct GameCharacter* character, UINT8 x, UINT8 y) {
 	move_sprite(character->spritids[0], x, y);
-	move_sprite(character->spritids[1], x + spritesize, y);
-	move_sprite(character->spritids[2], x, y + spritesize);
+	move_sprite(character->spritids[1], x, y + spritesize);
+	move_sprite(character->spritids[2], x + spritesize, y);
 	move_sprite(character->spritids[3], x + spritesize, y + spritesize);
 }
 
@@ -38,10 +38,10 @@ void setupcat() {
 
 	set_sprite_tile(0, 0);
 	cat.spritids[0] = 0;
-	set_sprite_tile(1, 1);
-	cat.spritids[1] = 1;
 	set_sprite_tile(2, 2);
 	cat.spritids[2] = 2;
+	set_sprite_tile(1, 1);
+	cat.spritids[1] = 1;
 	set_sprite_tile(3, 3);
 	cat.spritids[3] = 3;
 
@@ -49,19 +49,19 @@ void setupcat() {
 }
 
 void setupenemy() {
-	enemy.x = 80;
+	enemy.x = 20;
 	enemy.y = 130;
 	enemy.width = 16;
 	enemy.height = 16;
 
-	set_sprite_tile(8, 8);
-	enemy.spritids[8] = 8;
-	set_sprite_tile(9, 9);
-	enemy.spritids[9] = 9;
-	set_sprite_tile(10, 10);
-	enemy.spritids[10] = 10;
-	set_sprite_tile(11, 11);
-	enemy.spritids[11] = 11;
+	set_sprite_tile(4, 4);
+	enemy.spritids[0] = 4;
+	set_sprite_tile(5, 5);
+	enemy.spritids[1] = 5;
+	set_sprite_tile(6, 6);
+	enemy.spritids[2] = 6;
+	set_sprite_tile(7, 7);
+	enemy.spritids[3] = 7;
 
 	movegamecharacter(&enemy, enemy.x, enemy.y);
 }
@@ -108,27 +108,23 @@ void performantdelay(UINT8 numloops) {
 
 void main() {
 
-	set_sprite_data(0, 4, characters);
+	set_sprite_data(0, 8, characters);
 
 	//NR52_REG = 0x80;
 	//NR50_REG = 0x77;
 	//NR51_REG = 0xFF;
-
-	//font_t min_font; // задаем переменную которая хранит шрифт
-	//font_init(); // инициализируем шрифт
-	//min_font = font_load(font_min); // подгружаем в переменную один из шрифтов в массиве либы, занимает 36 тайлов
-	//font_set(min_font); // устанавливаем шрифт в значение нашей изменной переменной и загружаем в видео память
+	
+	font_t min_font; // задаем переменную которая хранит шрифт
+	font_init(); // инициализируем шрифт
+	min_font = font_load(font_min); // подгружаем в переменную один из шрифтов в массиве либы, занимает 36 тайлов
+	font_set(min_font); // устанавливаем шрифт в значение нашей изменной переменной и загружаем в видео память 
 
 	//set_bkg_data(37, 7, backgroundtiles);
 	//set_bkg_tiles(0, 0, 40, 18, backgroundmap);
 
 	//set_win_tiles(0, 0, 16, 1, windowmap); // устанавливаем координаты, кол-во символов в надписи и строк, которые будут браться из нашего windowmap
-	//move_win(7, 120); // перемещаем под слой нашего фона
-
-	//set_sprite_data(0, 2, melkiy);
-	//set_sprite_tile(0, 0);            /* defines the tiles numbers */
+	//move_win(7, 100); // перемещаем под слой нашего фона  
 	
-
 	//playerlocation[0] = 10;
 	//playerlocation[1] = floorYposition;
 	//jumping = 0;
@@ -136,7 +132,7 @@ void main() {
 	//move_sprite(0, playerlocation[0], playerlocation[1]);
 
 	setupcat();
-	setupenemy();
+	setupenemy(); 
 	// SHOW_BKG;  
 	// SHOW_WIN;
 	SHOW_SPRITES;
@@ -156,6 +152,10 @@ void main() {
 			cat.x += 2;
 			movegamecharacter(&cat, cat.x, cat.y);
 		}
+
+		enemy.x -= 5;
+		movegamecharacter(&enemy, enemy.x, enemy.y); 
+
 		performantdelay(5);
 	}
 }
