@@ -19,11 +19,11 @@ INT8 gravity = -2;
 INT16 currentspeedY;
 INT16 floorYposition = 139;
 
-struct GameCharacter cat;
-struct GameCharacter enemy;
+GameCharacter cat;
+GameCharacter enemy;
 UBYTE spritesize = 8;
 
-void movegamecharacter(struct GameCharacter* character, UINT8 x, UINT8 y) {
+void movegamecharacter(GameCharacter* character, UINT8 x, UINT8 y) {
 	move_sprite(character->spritids[0], x, y);
 	move_sprite(character->spritids[1], x, y + spritesize);
 	move_sprite(character->spritids[2], x + spritesize, y);
